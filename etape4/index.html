@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD-Persons - Étape 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="table_container">
+        <table>
+            <tr>
+                <th>N°</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Points</th>
+                <th>Select</th>
+            </tr>
+        </table>
+
+        <!-- Espace résumé : mis à jour par update_summary() -->
+        <div id="container_summary">
+            <p id="p1">0 ligne(s)</p>
+            <p id="p2"></p>
+            <p id="p3">Total point(s)= 0</p>
+        </div>
+
+        <button onclick="doInsert('nom', 'prenom', 10)">Ajouter</button>
+        <button onclick="consoleTableau()">Console Tableau</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
