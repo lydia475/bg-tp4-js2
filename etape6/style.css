@@ -1,0 +1,148 @@
+/* ===== Base de la page ===== */
+body {
+    margin: 0;
+    background: #fff;
+}
+
+/* ===== Cadre général (centré, police Calibri) ===== */
+#table_container {
+    width: 900px;
+    max-width: 95%;
+    margin: 30px auto;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* ===== Formulaire (étape 5) ===== */
+#form_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.form_group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 5px;
+}
+.form_label {
+    font-weight: bold;
+    font-size: 13px;
+    white-space: nowrap;
+}
+.form_field {
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    box-sizing: border-box;
+    padding: 0 4px;
+    border: 1px solid #767676;
+    font-family: inherit;
+}
+
+/* ===== Tableau ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* En-tête BLEU */
+th {
+    background-color: #007bbd;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 8px;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.45);
+}
+th:first-child { border-left: none; }
+
+/* Lignes */
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    background: #fff;
+}
+td:last-child { border-right: none; }
+
+/* Classes des colonnes */
+.col_number { text-align: center; width: 70px; }
+.col_text   { text-align: left; }
+.col_chkbox { text-align: center; width: 80px; }
+
+/* ===== Résumé (étape 4) : barre grise ===== */
+#container_summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
+    padding: 0 12px;
+    color: #444;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+#container_summary p { margin: 10px 0; }
+#p2 { flex: 1; text-align: center; font-style: italic; }
+
+/* ===== Zone des boutons du bas (étape 6) ===== */
+#container_btn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 14px 12px;
+}
+
+/* ===== Boutons colorés (seulement ceux qui ont une classe) ===== */
+.btn-add, .btn-consol, .btn-del {
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 9px;
+    cursor: pointer;
+}
+.btn-add    { background-color: #0bb600; }  /* Ajouter : vert */
+.btn-consol { background-color: #bf8f00; }  /* Console Tableau : doré */
+.btn-del    { background-color: #ff0000; }  /* Supprimer : rouge */
+
+/* ===== Ligne cochée surlignée (fonctionnalité en plus de l'étape 6) ===== */
+.row_selected td { background-color: #d7ecf8; }
+/* ===== NOUVEAU (étape 6) : barre de recherche (fonctionnalité 4) ===== */
+#search_container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    background: #fafafa;
+}
+#search_container .form_field {
+    flex: none;
+    width: 260px;
+}
+
+/* ===== NOUVEAU : en-têtes triables (fonctionnalité 5) ===== */
+th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+th.sortable:hover { background-color: #0069a3; }
+
+/* ===== NOUVEAU : case "tout sélectionner" (fonctionnalité 6) ===== */
+#check_all {
+    vertical-align: middle;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+/* ===== NOUVEAU : couleur des points (fonctionnalité 8) ===== */
+.pts_low  { color: #c40000; font-weight: bold; }   /* moins de 10 points : rouge */
+.pts_high { color: #0a8a00; font-weight: bold; }   /* 15 points ou plus : vert */

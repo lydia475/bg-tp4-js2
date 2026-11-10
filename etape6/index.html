@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD-Persons - Étape 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="table_container">
+
+        <div id="form_container">
+            <div class="form_group">
+                <label class="form_label">Nom:</label>
+                <input type="text" id="form_nom" class="form_field"/>
+            </div>
+            <div class="form_group">
+                <label class="form_label">Prénom:</label>
+                <input type="text" id="form_prenom" class="form_field"/>
+            </div>
+            <div class="form_group">
+                <label class="form_label">Points:</label>
+                <input type="number" id="form_points" class="form_field"/>
+            </div>
+            <!-- onclick dans le HTML : cours PRAVAN, slides 129-135 -->
+            <button class="btn-add" onclick="doNewData()">Ajouter</button>
+        </div>
+
+        <!-- NOUVEAU (fonctionnalité 4) : zone de recherche, filtrée par le script avec l'événement keyup -->
+        <div id="search_container">
+            <label class="form_label">Rechercher:</label>
+            <input type="text" id="search_input" class="form_field" placeholder="Nom ou prénom..."/>
+        </div>
+
+        <table>
+            <tr>
+                <th>N°</th>
+                <!-- NOUVEAU (fonctionnalité 5) : en-têtes triables.
+                     data-champ = propriété de l'objet à trier, data-label = texte de base (lus avec getAttribute, slides 106-107) -->
+                <th class="sortable" data-champ="nom" data-label="Nom">Nom</th>
+                <th class="sortable" data-champ="prenom" data-label="Prénom">Prénom</th>
+                <th class="sortable" data-champ="points" data-label="Points">Points</th>
+                <!-- NOUVEAU (fonctionnalité 6) : case "tout sélectionner" -->
+                <th>Select <input type="checkbox" id="check_all" title="Tout sélectionner"/></th>
+            </tr>
+        </table>
+
+        <div id="container_summary">
+            <p id="p1">0 ligne(s)</p>
+            <!-- p2 contient maintenant les statistiques (fonctionnalité 7) -->
+            <p id="p2"></p>
+            <p id="p3">Total point(s)= 0</p>
+        </div>
+
+        <!-- Boutons du bas, alignés à droite par le CSS -->
+        <div id="container_btn">
+            <button class="btn-consol" onclick="consoleTableau()">Console Tableau</button>
+            <button class="btn-del" onclick="deleteRow()">Supprimer</button>
+        </div>
+    </div>
+
+    <!-- Script à la fin du body pour que le DOM soit déjà chargé (cours PRAVAN, slides 23-26) -->
+    <script src="script.js"></script>
+</body>
+</html>
